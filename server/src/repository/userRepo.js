@@ -13,3 +13,14 @@ export const createUser = async (userCredentialsobj) => {
         throw error
     }
 }
+
+export const findUserByEmail = async (email) => {
+    try {
+        const user = await USER.findOne({ email })
+        return user;
+    } catch (error) {
+        console.log(error)
+        throw error
+    }
+
+}
